@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset = "utf-8">
+        <title>영화 소개 페이지(hw1)</title>
+        <style>
+            table {
+                border: "1";
+                width: 800px;
+                margin-top: auto;
+            }
+            th, td {
+                border: 1px solid #0f0f0f;
+                padding: 5px;
+            }
+            th {
+                text-align: center;
+            }
+            td {
+                text-align: start;
+            }
+        </style>
+    </head>
+
+    <body> 
+        <h1>안녕하세요 컴퓨터과학과 2024148048 신현호입니다.</h1>
+        <p>다음은 제가 영화를 볼 때 자주 방문하는 웹페이지들 입니다. 해당 사이트들을 누르면 접속 가능합니다.</p>
+        
+        <ul>
+            <li><a href="https://www.disneyplus.com/ko-kr">DisneyPlus</a></li>
+            <li><a href="https://www.netflix.com/kr/">Netflix</a></li>
+            <li><a href="https://www.primevideo.com/-/ko/offers/nonprimehomepage/ref=dv_web_force_root?language=ko">Prime Video</a>
+        </ul>
+
+        <table>
+            <caption>표1. Top3 영화</caption>
+            <thread>
+                <tr>
+                    <th rowspan="2">순위</th>
+                    <th colspan="3">영화 정보</th>
+                </tr>
+                <tr>    
+                    <th>제목</th>
+                    <th>포스터</th>
+                    <th>명대사</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>Taxi Driver</td>
+                    <td>
+                        <img src = "Taxi_Driver.webp" width="300" height="400" 
+                        alt="Picture of a film, Taxi Driver."> 
+                    </td>
+                    <td>On every street in every city, there's a nobody who dreams of being a somebody.</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Things to Do in Denver When You're Dead</td>
+                    <td>
+                        <img src="Denver.jpg" width="300" height="400" 
+                        alt="Picture of a film, Things to Do in Denver When You're Dead.">
+                    </td>
+                    <td>Protect. Love. Honor. Avenge.</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>It Takes Two</td>
+                    <td>
+                        <img src = "It_Takes_Two.png" width="300" height="400" 
+                        alt="Picture of a film, It Takes Two.">
+                    </td>
+                    <td>Two identical strangers. Two different worlds. One perfect match.</td>
+                </tr>
+            </thread>
+        </table>
+    </body>
+</html>
