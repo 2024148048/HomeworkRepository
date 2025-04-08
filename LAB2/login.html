@@ -1,29 +1,32 @@
 <!DOCTYPE html>
-<html lang="ko">
+
 <head>
   <meta charset="UTF-8">
-  <title>로그인 (Login)</title>
-  <!-- 외부 CSS 연결 -->
+  <title>Movie Site Login</title>
   <link rel="stylesheet" type="text/css" href="main.css">
 </head>
+
 <body>
-  <h1>로그인</h1>
+  <h2>Welcome to INTERNET-PROGRAMMING MOVIE SITE</h2>
+
+  <p><a href="login.html">로그인</a> | <a href="signup.html">회원가입</a></p>
+
   <form action="#" method="post">
-    <!-- 이메일 입력 -->
-    <label for="login-email">이메일:</label>
-    <input type="email" id="login-email" name="email" placeholder="이메일 입력" required>
-    <br><br>
-    
-    <!-- 비밀번호 입력 -->
-    <label for="login-password">비밀번호:</label>
-    <input type="password" id="login-password" name="password" required>
-    <br><br>
-    
-    <!-- 로그인 제출 버튼 -->
-    <button type="submit">로그인</button>
+
+    <div class="input-row">
+      <label>아이디:</label>
+      <input name="id" type="text" required placeholder="아이디 입력" autofocus /> 
+    </div>
+
+    <div class="input-row">
+      <label>비밀번호:</label>
+      <input name="password" type="password" required placeholder="비밀번호 입력" />
+    </div>
+
+    <p>
+      <button class="button-yes" type="submit">Login</button>
+      <button class="button-no" type="reset">Cancel</button>
+    </p>
   </form>
-  <br>
-  <!-- 회원가입 페이지로 돌아가는 링크 (필요시 추가) -->
-  <p>계정이 없으신가요? <a href="signup.html">회원가입</a></p>
 </body>
 </html>

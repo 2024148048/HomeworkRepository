@@ -1,0 +1,70 @@
+body {
+    background-color: #ffffff;  
+    font-family: Arial, sans-serif;  
+    font-size: 16px;
+    color: #000000;  
+    text-align: center;  
+    margin: 0; 
+    padding: 0;
+    
+}
+  
+form {
+    background-color: #ffffff;
+    width: 50%;
+    max-width: 500px;
+    height: 90%;
+    max-height: 700px;
+    margin: 20px auto;
+    padding: 10px;
+    border: 2px solid #000000;
+}
+
+.input-row {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.input-row label {
+    width: 20%;
+    text-align: left;
+    margin-left: 10px;
+}
+
+.input-row label:not(:first-child) {
+    width: auto;
+}
+
+.input-row input, select {
+    width: 70%;
+    padding: 5px;
+    border: 1px round #000000;
+    font-size: 16px;
+    margin-right: 20px;
+}
+
+.input-row input[type="radio"] {
+    width: 20px;
+    padding: 10px;
+    margin: 5px 10px;
+}
+
+button {
+    align-items: left;
+    width: 25%;
+    padding: 10px;
+    margin-top: 10px;
+    font-size: 16px;
+    border: none;
+}
+
+.button-yes {
+    background-color: #3feb58;
+    color: #000000;
+}
+
+.button-no {
+    background-color: red;
+    color: #ffffff;
+}
