@@ -1,0 +1,234 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+  
+header {
+    width:100%;
+    max-width:1020px;
+    overflow:hidden;
+    margin:20px 0;
+}
+#header-text {
+    display: inline-block;
+    font-size: 2em;
+    white-space: nowrap;
+    animation: slideLeft 2s forwards;
+}
+@keyframes slideLeft {
+    from { transform: translateX(100%); }
+    to { transform: translateX(0); }
+}
+
+.nav-bar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    flex-direction: row;
+    gap: 20px;
+    background: #ffffff;
+    width: 100%;
+    padding: 10px 0;
+}
+.nav-bar a {
+    text-align: center;
+    color: #000000;
+    text-decoration: none;
+    padding: 5px 10px;
+}
+.nav-bar a.active {
+    border-top: 2px solid red;
+    border-bottom: 2px solid red;
+}
+
+hr { 
+    width: 100%;
+    max-width: 1020px;
+    border: none;
+    border-top: 2px solid #000000;
+    margin: 0 0 20px;
+}
+
+.main-content{
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    padding: 5px 10px;
+}
+.section-container h2{
+    font-size:1.5em;
+    border-bottom:2px solid #000000;
+    padding-bottom:5px;
+    margin-bottom:10px;
+}
+
+.movie-list{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+.movie-card{
+    display: flex;
+    gap: 20px;
+    flex: 1 1 calc(25% - 20px);
+    border: 1px solid #000000;
+    height: 600px;
+    overflow: hidden;
+}
+
+.poster{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+    overflow: hidden;
+    background: #ffffff;
+    padding: 0;
+    height: calc(100%/2);
+}
+.poster img{
+    position: relative;
+    z-index: 1;
+    width: 70%;
+    height: 100%;
+    object-fit: cover;
+    transition: filter 0.3s ease, transform 0.3s ease;
+}
+.poster:hover img{
+    filter: brightness(50%);
+}
+.overlay{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #ffffff;
+    font-size: 1em;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 2;
+}
+.poster:hover .overlay{
+    opacity: 1;
+}
+
+.about-content{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    height: auto;
+}
+.about-content p{
+    line-height: 1.6;
+    text-align: justify;
+}
+
+@media (max-width: 480px) {
+    .nav-bar{
+      flex-direction: column;
+      align-items: center;
+      gap: 5px;
+    }
+    .movie-list{
+      flex-direction: column;
+    }
+    .about-content p{
+      column-count: 1;
+      column-rule: none;
+    }
+    .section-container h2{
+        text-align: center;
+    }
+}
+@media (min-width: 481px) and (max-width: 800px) {
+    .movie-card {
+      flex: 1 1 calc(50% - 20px);
+      height: 300px;
+    }
+    .about-content p{
+        column-count: 1;
+        column-rule: none;
+    }
+    .section-container h2{
+        text-align: center;
+    }
+}
+@media (min-width: 801px) {
+    .main-content{
+        max-width: 1020px;
+    }
+    .movie-card {
+      flex: 1 1 calc(25% - 20px);
+      height: 300px;
+    }
+    .about-content p{
+        flex-direction: row;
+        column-count: 2;
+        column-gap: 40px;
+        column-rule: 2px solid #000000;
+    }
+}
+
+form {
+    background-color: #ffffff;
+    width: 50%;
+    max-width: 500px;
+    height: 90%;
+    max-height: 700px;
+    margin: 20px auto;
+    padding: 10px;
+    border: 2px solid #000000;
+}
+
+.input-row {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.input-row label {
+    width: 20%;
+    text-align: left;
+    margin-left: 10px;
+}
+
+.input-row label:not(:first-child) {
+    width: auto;
+}
+
+.input-row input, select {
+    width: 70%;
+    padding: 5px;
+    border: 1px round #000000;
+    font-size: 16px;
+    margin-right: 20px;
+}
+
+.input-row input[type="radio"] {
+    width: 20px;
+    padding: 10px;
+    margin: 5px 10px;
+}
+
+button {
+    align-items: left;
+    width: 25%;
+    padding: 10px;
+    margin-top: 10px;
+    font-size: 16px;
+    border: none;
+}
+
+.button-yes {
+    background-color: #3feb58;
+    color: #000000;
+}
+
+.button-no {
+    background-color: red;
+    color: #ffffff;
+}
