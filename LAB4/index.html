@@ -33,14 +33,14 @@
         <label><input type="radio" name="sort" value="date_desc"> 개봉 내림차순</label>
         <label><input type="radio" name="sort" value="date_asc"> 개봉 오름차순</label>
       </aside>
-
       <div class="movies-grid" id="movies-grid">
         <!-- JS로 영화 카드가 삽입됩니다. -->
       </div>
-      <!-- infinite scroll sentinel -->
-      <div id="sentinel"></div>
     </div>
   </div>
+
+  <!-- infinite scroll sentinel: 페이지 맨 아래에 위치 -->
+  <div id="sentinel"></div>
 
   <script>
     let movies = [];
@@ -53,6 +53,7 @@
         const res = await fetch('product.json');
         movies = await res.json();
         filtered = applyFilter(movies);
+        currentPage = 0;
         renderNextBatch();
         observeSentinel();
       } catch (e) {
@@ -62,9 +63,7 @@
 
     function applyFilter(list) {
       const kw = document.getElementById('search-input').value.trim().toLowerCase();
-      return list.filter(m =>
-        (m.title || '').toLowerCase().includes(kw)
-      );
+      return list.filter(m => (m.title || '').toLowerCase().includes(kw));
     }
 
     function renderMovies(list, append = false) {
@@ -100,16 +99,13 @@
     }
 
     function filterAndReset() {
-      // 검색/정렬 버튼 눌렀을 때
       filtered = applyFilter(movies);
       currentPage = 0;
       renderNextBatch();
     }
 
     document.getElementById('filter-btn').addEventListener('click', filterAndReset);
-    document.querySelectorAll('input[name="sort"]').forEach(r =>
-      r.addEventListener('change', filterAndReset)
-    );
+    document.querySelectorAll('input[name="sort"]').forEach(r => r.addEventListener('change', filterAndReset));
 
     function observeSentinel() {
       const sentinel = document.getElementById('sentinel');
@@ -117,11 +113,10 @@
         if (entries[0].isIntersecting) {
           renderNextBatch();
         }
-      }, {
-        rootMargin: '0px 0px 200px 0px'
-      });
+      }, { rootMargin: '0px 0px 200px 0px' });
       io.observe(sentinel);
 
+      // 스크롤 이벤트 fallback
       window.addEventListener('scroll', () => {
         const scrollPos = window.innerHeight + window.pageYOffset;
         const threshold = document.documentElement.scrollHeight - 100;
