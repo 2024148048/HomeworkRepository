@@ -73,14 +73,6 @@
     "vote_average":3.9
   },
   {
-    "id":"9102",
-    "title":"Screamers",
-    "overview":"(SIRIUS 6B, Year 2078) On a distant mining planet ravaged by a decade of war, scientists have created the perfect weapon: a blade-wielding, self-replicating race of killing devices known as Screamers designed for one purpose only -- to hunt down and destroy all enemy life forms.",
-    "poster_path":"http://image.tmdb.org/t/p/w185/aFEs7D7IQ2IehTsniRIojDkiDl6.jpg",
-    "release_date":"1995-09-08",
-    "vote_average":6.1
-  },
-  {
     "id":"27526",
     "title":"The Crossing Guard",
     "overview":"After his daughter died in a hit and run, Freddy Gale has waited six years for John Booth, the man responsible, to be released from prison. On the day of release, Gale visits Booth and announces that he will kill him in one week. Booth uses his time to try and make peace with himself and his entourage, and even finds romance. Gale, whose life is spiraling down because of his obsession towards Booth, will bring himself on the very edge of sanity. At he end of the week, both men will find themselves on a collision course with each other.",
@@ -95,14 +87,6 @@
     "poster_path":"https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMzAzMjNfNCAg%2FMDAxNjc5NTUwNjk2MDc2.9ofJQSAz4cSJjDCWuNjxoPBZMtybYV4E1EBmjNEw2aUg.xaNqqAG5EGNe31bEVrcHsJNJRYCGbzFVYQP6zb1rIc0g.JPEG.conradmajors%2FMV5BYWZlNGEzNjUtZGRiZi00ZWMxLWJiMjAtN2E1OWI3MTM4MjdjXkEyXkFqcGdeQXVyMjUzOTY1.jpg&type=sc960_832",
     "release_date":"1996-02-02",
     "vote_average":5.5
-  },
-  {
-    "id":"400",
-    "title":"Things to Do in Denver When You're Dead",
-    "overview":"A mafia film in Tarantino style with a star-studded cast. Jimmy’s “The Saint” gangster career has finally ended. Yet now he finds him self doing favors for a wise godfather known as “The Man with the Plan.”",
-    "poster_path":"http://image.tmdb.org/t/p/w185/ysKIolKO0376Nl5DV1fDAAPudEq.jpg",
-    "release_date":"1995-12-01",
-    "vote_average":6.7
   },
   {
     "id":"880",
@@ -124,7 +108,7 @@
     "id":"188588",
     "title":"Last Summer in the Hamptons",
     "overview":"Filmed entirely on location in East Hampton, Long Island, \"Last Summer in the Hamptons\" concerns a large theatrical family spending the last weekend of their summer together at the decades-old family retreat which economic circumstances have forced them to put on the market. Victoria Foyt plays a young Hollywood actress whose visit wreaks havoc on the stellar group of family and friends - led by matriarch Viveca Lindfors and made up of an extraordinary mix of prominent New York actors, directors, and playwrights. In the course of a very unusual weekend, comic as well as serious situations arise, and the family's secrets - of which there are many - begin to unravel.",
-    "poster_path":"http://image.tmdb.org/t/p/w185/pfgpkDNcwSi1x4jVzeLqvxTwX5a.jpg",
+    "poster_path":"https://upload.wikimedia.org/wikipedia/en/e/ec/Last_Summer_in_the_Hamptons.jpg",
     "release_date":"1995-11-22",
     "vote_average":0.0
   },
@@ -132,7 +116,7 @@
     "id":"8447",
     "title":"Angels and Insects",
     "overview":"In Victorian England, wealthy patriarch Sir Harald Alabaster invites an impoverished biologist, William Adamson, into his home. There, William tries to continue his work, but is distracted by Alabaster's seductive daughter, Eugenia. William and Eugenia begin a torrid romance, but as the couple become closer, the young scientist begins to realize that dark, disturbing things are happening behind the closed doors of the Alabaster manor.",
-    "poster_path":"http://image.tmdb.org/t/p/w185/1QyCF6IFoX5WJIYHOkmLa3vzU0r.jpg",
+    "poster_path":"https://upload.wikimedia.org/wikipedia/en/8/8f/Angels_and_insects.jpg?20171231224713",
     "release_date":"1995-09-10",
     "vote_average":6.3
   },
@@ -140,7 +124,7 @@
     "id":"10534",
     "title":"White Squall",
     "overview":"Teenage boys discover discipline and camaraderie on an ill-fated sailing voyage.",
-    "poster_path":"http://image.tmdb.org/t/p/w185/3a5nomeyzJF4gG26HouCtce99ki.jpg",
+    "poster_path":"https://upload.wikimedia.org/wikipedia/en/1/17/Whitesquall.jpg",
     "release_date":"1996-02-02",
     "vote_average":6.3
   },
@@ -148,23 +132,15 @@
     "id":"17414",
     "title":"Dunston Checks In",
     "overview":"Hotel manager Robert Grant is forced by his boss to postpone his family vacation when a hotel critic checks in. Trouble is, the critic is really a villainous jewel thief with an orangutan assistant named Dunston. When Dunston gets loose and tries to escape a life of crime -- aided by Robert's sons -- havoc, hijinks and lots of laughs abound!",
-    "poster_path":"http://image.tmdb.org/t/p/w185/lXSWbUA3T2o792SYdbfFKFTcSC1.jpg",
+    "poster_path":"https://image.cine21.com/resize/cine21/poster/2005/0610/M0010117_[X280,400].jpg",
     "release_date":"1996-01-12",
     "vote_average":5.1
-  },
-  {
-    "id":"13997",
-    "title":"Black Sheep",
-    "overview":"When dignified Albert Donnelly runs for Governor, his team moves to keep his slow-witted and klutzy younger brother, Mike, out of the eye of the media. To baby-sit Mike, the campaign assigns sarcastic Steve, who gets the experience of a lifetime when he tries to take Mike out of town during the election.",
-    "poster_path":"http://image.tmdb.org/t/p/w185/2wsaboVhKXpsLchoaXi0oWmQ7xM.jpg",
-    "release_date":"1996-02-01",
-    "vote_average":6.0
   },
   {
     "id":"2086",
     "title":"Nick of Time",
     "overview":"Gene Watson is a public accountant who arrives on a train at Union Station in Los Angeles, accompanied by his 6-year-old daughter Lynn. Because of his ordinary looks, he is approached by a pair of sinister people named Smith and Jones.",
-    "poster_path":"http://image.tmdb.org/t/p/w185/3kYcyD9yAjdjimYlIiGPfdMVbZb.jpg",
+    "poster_path":"https://upload.wikimedia.org/wikipedia/en/a/a4/Nick_of_time.jpg",
     "release_date":"1995-11-22",
     "vote_average":6.1
   },
@@ -172,7 +148,7 @@
     "id":"61548",
     "title":"The Journey of August King",
     "overview":"The Journey of August King is a multi-dimensional drama about a North Carolina farmer in 1815. August King, a widower, is on his way home as he does every year after selling his produce and purchasing the stock and goods he will need to survive the winter. On his journey, he comes upon a run-away slave, a young woman about 19 and August King must decide to violate the law and help this slave to freedom or else leave her to be hunted down and, ultimately, returned to her slave owner.",
-    "poster_path":"http://image.tmdb.org/t/p/w185/hT5CF2RJPAVi9TE4iKxGYAufY4J.jpg",
+    "poster_path":"https://resizing.flixster.com/f8o9cgKgeneG9SXFjkyB7YyhMDs=/206x305/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p17125_p_v8_aa.jpg",
     "release_date":"1995-09-14",
     "vote_average":6.7
   },
@@ -180,7 +156,7 @@
     "id":"9095",
     "title":"Mary Reilly",
     "overview":"A housemaid falls in love with Dr. Jekyll and his darkly mysterious counterpart, Mr. Hyde.",
-    "poster_path":"http://image.tmdb.org/t/p/w185/Oesh4pN5J2ing4flkgkiVdxILP.jpg",
+    "poster_path":"https://upload.wikimedia.org/wikipedia/en/4/4e/Mary_Reilly.jpg",
     "release_date":"1996-02-23",
     "vote_average":5.7
   },
@@ -188,7 +164,7 @@
     "id":"12158",
     "title":"Vampire in Brooklyn",
     "overview":"Maximillian, the lone survivor of a race of vampires, comes to Brooklyn in search of a way to live past the next full moon. His ticket to survival is Rita, a NYPD detective who doesn't know she's half vampire -- and Maximillian will do whatever's necessary to put her under his spell.",
-    "poster_path":"http://image.tmdb.org/t/p/w185/bH1v8z12ZU7Y6zANgU1B00a86Co.jpg",
+    "poster_path":"https://upload.wikimedia.org/wikipedia/en/d/dc/Vampire_in_brooklyn.jpg",
     "release_date":"1995-10-26",
     "vote_average":4.5
   },
