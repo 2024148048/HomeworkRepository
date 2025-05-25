@@ -84,10 +84,13 @@ hr {
 
 /* ======================= Movie Card ======================= */
 .movie-card {
-  display: flex; flex-direction: column;
-  border: 1px solid #000; border-radius: 5px;
-  overflow: hidden; background: #fff;
-  aspect-ratio: 2/3; transition: transform 0.2s;
+  display: grid; 
+  grid-template-rows: 2fr 1fr;
+  border: 1px solid #000; 
+  border-radius: 5px;
+  overflow: hidden; 
+  background: #fff;
+  transition: transform 0.2s;
 }
 .movie-card:hover {
   transform: translateY(-5px);
@@ -95,7 +98,8 @@ hr {
 
 /* ---------- Poster & Overlay ---------- */
 .movie-card__poster {
-  position: relative; width: 100%; height: auto;
+  position: relative; width: 100%; height: 100%;
+  overflow: hidden; 
 }
 .movie-card__poster img {
   width: 100%; display: block; object-fit: cover;
@@ -120,7 +124,7 @@ hr {
 
 /* ---------- Info Section ---------- */
 .movie-card__info {
-  padding: 10px; flex: 1;
+  padding: 10px;
   display: flex; flex-direction: column;
   justify-content: space-between;
 }
