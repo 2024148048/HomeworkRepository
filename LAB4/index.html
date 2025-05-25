@@ -56,6 +56,7 @@
     }
 
     // 영화 목록 렌더링
+    // 영화 목록 렌더링
     function renderMovies(list) {
       const container = document.getElementById('movies-grid');
       container.innerHTML = '';
@@ -63,16 +64,22 @@
         const card = document.createElement('div');
         card.className = 'movie-card';
         card.innerHTML = `
-          <img src="${movie.poster_path}" alt="${movie.title}">
-          <div class="info">
+          <div class="movie-card__poster" tabindex="0">
+            <img src="${movie.poster_path}" alt="${movie.title}">
+            <div class="movie-card__overlay">
+              <p>${movie.overview}</p>
+            </div>
+          </div>
+          <div class="movie-card__info">
             <h4>${movie.title}</h4>
-            <p>📅${movie.release_date}</p>
-            <p>⭐${movie.vote_average}/10</p>
+            <p>📅 ${movie.release_date}</p>
+            <p>⭐ ${movie.vote_average}/10</p>
           </div>
         `;
         container.appendChild(card);
       });
     }
+
 
     // 필터링 & 정렬
     function filterMovies() {

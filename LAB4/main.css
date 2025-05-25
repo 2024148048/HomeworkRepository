@@ -1,4 +1,4 @@
-/* 공통 박스 사이징 */
+/* ========================== 기본 스타일 ========================== */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -7,115 +7,71 @@
 
 body {
   font-family: Arial, sans-serif;
-  background: #fafafa;
+  display: flex;
   flex-direction: column;
   align-items: center;
+  background: #fafafa;
 }
 
 .container {
+  width: 100%;
   max-width: 1020px;
-  margin: 0 auto;
   padding: 20px;
 }
 
-/* 헤더 & 네비게이션 */
 header h1 {
   font-size: 2em;
   margin-bottom: 10px;
+  animation: slideLeft 2s forwards;
 }
-#header-text {
-    display: inline-block;
-    font-size: 2em;
-    white-space: nowrap;
-    animation: slideLeft 2s forwards;
-}
+
 @keyframes slideLeft {
-    from { transform: translateX(100%); }
-    to { transform: translateX(0); }
+  from { transform: translateX(100%); }
+  to   { transform: translateX(0); }
 }
 
 .nav-bar {
   display: flex;
-  gap: 15px;
-  margin-bottom: 10px;
+  flex-wrap: wrap;
+  gap: 20px;
+  background: #fff;
+  padding: 10px 0;
 }
 
 .nav-bar a {
   text-decoration: none;
-  color: #333;
+  color: #000;
+  padding: 5px 10px;
 }
 
 .nav-bar a.active {
-    border-top: 2px solid red;
-    border-bottom: 2px solid red;
+  border-top: 2px solid red;
+  border-bottom: 2px solid red;
 }
-
 
 hr {
   border: none;
-  border-top: 1px solid #000;
-  margin: 10px 0;
-}
-
-/* 검색 및 필터 바 */
-.filter-bar {
-  display: flex;
-  gap: 10px;
+  border-top: 2px solid #000;
   margin: 20px 0;
 }
 
-.filter-bar input {
-  flex: 1;
-  padding: 8px;
-  font-size: 1em;
-}
-
-.filter-bar button {
-  padding: 8px 12px;
-  font-size: 1em;
-  cursor: pointer;
-}
-
-/* 콘텐츠 레이아웃 */
-.content {
-  display: flex;
-  gap: 20px;
-}
-
-/* 사이드바 (정렬 옵션) */
-.sort-options {
-  width: 200px;
-  border: 1px solid #ccc;
-  padding: 10px;
-  border-radius: 5px;
-  background: #fff;
-}
-
-.sort-options h3 {
-  margin-bottom: 10px;
-}
-
-.sort-options label {
-  display: block;
-  margin-bottom: 6px;
-  font-size: 0.95em;
-}
-
-/* 영화 그리드 */
-.movies-grid {
-  flex: 1;
+/* ======================= 영화 리스트 그리드 ======================= */
+.movie-list {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 20px;
+  width: 100%;
+  margin-bottom: 40px;
 }
 
-/* 영화 카드 */
 .movie-card {
-  background: #fff;
-  border: 1px solid #ccc;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #000;
   border-radius: 5px;
   overflow: hidden;
-  text-align: center;
+  background: #fff;
+  aspect-ratio: 2/3;
   transition: transform 0.2s;
 }
 
@@ -123,89 +79,131 @@ hr {
   transform: translateY(-5px);
 }
 
-.movie-card img {
+/* =========== 포스터 & 오버레이 =========== */
+.movie-card__poster {
+  position: relative;
   width: 100%;
-  display: block;
+  aspect-ratio: 2/3;
+  overflow: hidden;
 }
 
-.movie-card .info {
+.movie-card__poster img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: filter 0.3s ease, transform 0.3s ease;
+}
+
+.movie-card__poster:hover img,
+.movie-card__poster:focus-within img {
+  filter: brightness(50%);
+}
+
+.movie-card__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  padding: 15px;
+  font-size: 0.9em;
+  line-height: 1.4;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  overflow-y: auto;
+}
+
+.movie-card__poster:hover .movie-card__overlay,
+.movie-card__poster:focus-within .movie-card__overlay {
+  opacity: 1;
+}
+
+/* =========== 정보 영역 =========== */
+.movie-card__info {
   padding: 10px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
-.movie-card .info h4 {
-  margin-bottom: 5px;
+.movie-card__info h4 {
+  margin-bottom: 8px;
   font-size: 1.1em;
 }
 
-.movie-card .info p {
-  font-size: 0.9em;
-  color: #666;
+.movie-card__info p {
+  margin: 4px 0;
+  font-size: 0.95em;
+  color: #333;
 }
 
-.greeting {
-    text-align: center;
+/* ====================== 반응형 미디어쿼리 ====================== */
+/* 모바일 (최대 480px) */
+@media (max-width: 480px) {
+  .nav-bar {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+  .movie-list {
+    grid-template-columns: 1fr;
+  }
 }
 
-.greeting h2 {
-    padding: 10px;
+/* 태블릿 (481px ~ 800px) */
+@media (min-width: 481px) and (max-width: 800px) {
+  .movie-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
+/* 데스크탑 (801px 이상) */
+@media (min-width: 801px) {
+  .movie-list {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* ======================= 기타 폼 스타일 ======================= */
 form {
-    background-color: #ffffff;
-    width: 50%;
-    max-width: 500px;
-    height: 90%;
-    max-height: 700px;
-    margin: 20px auto;
-    padding: 10px;
-    border: 2px solid #000000;
+  background: #fff;
+  width: 100%;
+  max-width: 500px;
+  margin: 20px auto;
+  padding: 20px;
+  border: 2px solid #000;
+  border-radius: 5px;
 }
 
 .input-row {
-    display: flex;
-    align-items: center;
-    margin-top: 10px;
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
 }
 
 .input-row label {
-    width: 20%;
-    text-align: left;
-    margin-left: 10px;
+  width: 30%;
+  margin-right: 10px;
+  text-align: left;
 }
 
-.input-row label:not(:first-child) {
-    width: auto;
-}
-
-.input-row input, select {
-    width: 70%;
-    padding: 5px;
-    border: 1px round #000000;
-    font-size: 16px;
-    margin-right: 20px;
-}
-
-.input-row input[type="radio"] {
-    width: 20px;
-    padding: 10px;
-    margin: 5px 10px;
+.input-row input,
+.input-row select {
+  flex: 1;
+  padding: 8px;
+  border: 1px solid #000;
+  font-size: 1em;
 }
 
 button {
-    align-items: left;
-    width: 25%;
-    padding: 10px;
-    margin-top: 10px;
-    font-size: 16px;
-    border: none;
+  padding: 10px 20px;
+  font-size: 1em;
+  cursor: pointer;
+  margin-top: 15px;
 }
 
-.button-yes {
-    background-color: #3feb58;
-    color: #000000;
-}
-
-.button-no {
-    background-color: red;
-    color: #ffffff;
-}
+.button-yes { background: #3feb58; color: #000; }
+.button-no  { background: #f00;      color: #fff; }
