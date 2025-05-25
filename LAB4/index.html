@@ -26,7 +26,6 @@
 
     <!-- 정렬 옵션 + 영화 그리드 -->
     <div class="content">
-      <!-- 사이드바: 정렬 라디오 -->
       <aside class="sort-options">
         <h3>정렬 기준</h3>
         <label><input type="radio" name="sort" value="vote_desc" checked> 평점 내림차순</label>
@@ -35,31 +34,42 @@
         <label><input type="radio" name="sort" value="date_asc"> 개봉 오름차순</label>
       </aside>
 
-      <!-- 영화 카드 그리드 -->
       <div class="movies-grid" id="movies-grid">
         <!-- JS로 영화 카드가 삽입됩니다. -->
       </div>
+      <!-- infinite scroll sentinel -->
+      <div id="sentinel"></div>
     </div>
   </div>
 
   <script>
     let movies = [];
+    const pageSize = 10;
+    let currentPage = 0;
+    let filtered = [];
 
-    // 1) 데이터 로드 → filterMovies 호출
     async function loadMovies() {
       try {
         const res = await fetch('product.json');
         movies = await res.json();
-        renderMovies(movies);
+        filtered = applyFilter(movies);
+        renderNextBatch();
+        observeSentinel();
       } catch (e) {
         console.error('Load error:', e);
       }
     }
 
-    // 2) 렌더링
-    function renderMovies(list) {
+    function applyFilter(list) {
+      const kw = document.getElementById('search-input').value.trim().toLowerCase();
+      return list.filter(m =>
+        (m.title || '').toLowerCase().includes(kw)
+      );
+    }
+
+    function renderMovies(list, append = false) {
       const container = document.getElementById('movies-grid');
-      container.innerHTML = '';
+      if (!append) container.innerHTML = '';
       list.forEach(movie => {
         const card = document.createElement('div');
         card.className = 'movie-card';
@@ -81,30 +91,39 @@
       });
     }
 
-    // 3) 검색 & 정렬
-    function filterMovies() {
-      const kw = document.getElementById('search-input')
-                      .value.trim().toLowerCase();
-      let filtered = movies.filter(m =>
-        m.title.toLowerCase().includes(kw)
-      );
+    function renderNextBatch() {
+      const start = currentPage * pageSize;
+      const nextBatch = filtered.slice(start, start + pageSize);
+      if (nextBatch.length === 0) return;
+      renderMovies(nextBatch, currentPage > 0);
+      currentPage++;
+    }
 
-      const sortValue = document
-        .querySelector('input[name="sort"]:checked').value;
-      filtered.sort((a, b) => {
-        if (sortValue === 'vote_desc')  return b.vote_average - a.vote_average;
-        if (sortValue === 'vote_asc')   return a.vote_average - b.vote_average;
-        if (sortValue === 'date_desc')  return new Date(b.release_date) - new Date(a.release_date);
-        if (sortValue === 'date_asc')   return new Date(a.release_date) - new Date(b.release_date);
+    function filterAndReset() {
+      // 검색/정렬 버튼 눌렀을 때
+      filtered = applyFilter(movies);
+      currentPage = 0;
+      renderNextBatch();
+    }
+
+    document.getElementById('filter-btn').addEventListener('click', filterAndReset);
+    document.querySelectorAll('input[name="sort"]').forEach(r =>
+      r.addEventListener('change', filterAndReset)
+    );
+
+    function observeSentinel() {
+      const sentinel = document.getElementById('sentinel');
+      const io = new IntersectionObserver(entries => {
+        if (entries[0].isIntersecting) {
+          renderNextBatch();
+        }
+      }, {
+        rootMargin: '200px'
       });
-
-      renderMovies(filtered);
+      io.observe(sentinel);
     }
 
     document.addEventListener('DOMContentLoaded', loadMovies);
-    document.getElementById('filter-btn').addEventListener('click', filterMovies);
-    document.querySelectorAll('input[name="sort"]')
-            .forEach(r => r.addEventListener('change', filterMovies));
   </script>
 </body>
 </html>
