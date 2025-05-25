@@ -18,46 +18,45 @@
       <hr>
     </header>
 
+    <!-- 검색 바 -->
     <section class="filter-bar">
       <input type="text" id="search-input" placeholder="키워드를 입력하세요.">
       <button id="filter-btn">Filter results</button>
     </section>
 
-    <main>
-      <h2>Movies</h2>
-      <section class="filter-bar"></section>
+    <!-- 정렬 옵션 + 영화 그리드 -->
+    <div class="content">
+      <!-- 사이드바: 정렬 라디오 -->
+      <aside class="sort-options">
+        <h3>정렬 기준</h3>
+        <label><input type="radio" name="sort" value="vote_desc" checked> 평점 내림차순</label>
+        <label><input type="radio" name="sort" value="vote_asc"> 평점 오름차순</label>
+        <label><input type="radio" name="sort" value="date_desc"> 개봉 내림차순</label>
+        <label><input type="radio" name="sort" value="date_asc"> 개봉 오름차순</label>
+      </aside>
+
+      <!-- 영화 카드 그리드 -->
       <div class="movies-grid" id="movies-grid">
         <!-- JS로 영화 카드가 삽입됩니다. -->
       </div>
-
-      <div class="content">
-        <aside class="sort-options">
-          <h3>정렬 기준</h3>
-          <label><input type="radio" name="sort" value="vote_desc" checked> 평점 내림차순</label>
-          <label><input type="radio" name="sort" value="vote_asc"> 평점 오름차순</label>
-          <label><input type="radio" name="sort" value="date_desc"> 개봉 내림차순</label>
-          <label><input type="radio" name="sort" value="date_asc"> 개봉 오름차순</label>
-        </aside>
-        <div class="movies-grid" id="movies-grid"></div>
-      </div>
-    </main>
+    </div>
   </div>
-  
+
   <script>
     let movies = [];
 
-    // JSON 불러오기 후 곧바로 필터·정렬 실행
+    // 1) 데이터 로드 → filterMovies 호출
     async function loadMovies() {
       try {
         const res = await fetch('product.json');
         movies = await res.json();
-        filterMovies();  // 초기 로드 시에도 정렬된 결과로 보여줌
+        filterMovies();
       } catch (e) {
         console.error('Load error:', e);
       }
     }
 
-    // 영화 목록 렌더링
+    // 2) 렌더링
     function renderMovies(list) {
       const container = document.getElementById('movies-grid');
       container.innerHTML = '';
@@ -81,7 +80,7 @@
       });
     }
 
-    // 검색 & 정렬
+    // 3) 검색 & 정렬
     function filterMovies() {
       const kw = document.getElementById('search-input')
                       .value.trim().toLowerCase();
@@ -91,7 +90,6 @@
 
       const sortValue = document
         .querySelector('input[name="sort"]:checked').value;
-      console.log('↕️ sorting by', sortValue);
       filtered.sort((a, b) => {
         if (sortValue === 'vote_desc')  return b.vote_average - a.vote_average;
         if (sortValue === 'vote_asc')   return a.vote_average - b.vote_average;
@@ -103,8 +101,7 @@
     }
 
     document.addEventListener('DOMContentLoaded', loadMovies);
-    document.getElementById('filter-btn')
-            .addEventListener('click', filterMovies);
+    document.getElementById('filter-btn').addEventListener('click', filterMovies);
     document.querySelectorAll('input[name="sort"]')
             .forEach(r => r.addEventListener('change', filterMovies));
   </script>
