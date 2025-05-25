@@ -18,13 +18,11 @@
       <hr>
     </header>
 
-    <!-- 검색 바 -->
     <section class="filter-bar">
       <input type="text" id="search-input" placeholder="키워드를 입력하세요.">
       <button id="filter-btn">Filter results</button>
     </section>
 
-    <!-- 정렬 옵션 + 영화 그리드 -->
     <div class="content">
       <aside class="sort-options">
         <h3>정렬 기준</h3>
@@ -34,12 +32,10 @@
         <label><input type="radio" name="sort" value="date_asc"> 개봉 오름차순</label>
       </aside>
       <div class="movies-grid" id="movies-grid">
-        <!-- JS로 영화 카드가 삽입됩니다. -->
       </div>
     </div>
   </div>
 
-  <!-- infinite scroll sentinel: 페이지 맨 아래에 위치 -->
   <div id="sentinel"></div>
 
   <script>
@@ -116,7 +112,6 @@
       }, { rootMargin: '0px 0px 200px 0px' });
       io.observe(sentinel);
 
-      // 스크롤 이벤트 fallback
       window.addEventListener('scroll', () => {
         const scrollPos = window.innerHeight + window.pageYOffset;
         const threshold = document.documentElement.scrollHeight - 100;

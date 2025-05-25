@@ -1,4 +1,3 @@
-/* ========================== Reset & Fullscreen Layout ========================== */
 html, body {
   margin: 0; padding: 0;
   height: 100%; width: 100%;
@@ -11,7 +10,6 @@ body {
   background: #fafafa;
 }
 
-/* ========================== Container ========================== */
 .container {
   width: 100%;
   max-width: 1020px;
@@ -21,7 +19,6 @@ body {
   flex: 1 0 auto;
 }
 
-/* ========================== Header & Nav ========================== */
 header h1 {
   font-size: 2em;
   margin-bottom: 10px;
@@ -53,7 +50,6 @@ hr {
   margin: 20px 0;
 }
 
-/* ========================== Filter Bar ========================== */
 .filter-bar {
   display: flex;
   width: 100%;
@@ -73,7 +69,6 @@ hr {
   cursor: pointer;
 }
 
-/* ======================= Content Layout ======================= */
 .content {
   display: flex;
   gap: 20px;
@@ -96,14 +91,12 @@ hr {
   font-size: 0.9em;
 }
 
-/* ======================= Movie Grid ======================= */
 .movies-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);  /* 한 행에 2개 */
+  grid-template-columns: repeat(2, 1fr); 
   gap: 20px;
 }
 
-/* ======================= Movie Card ======================= */
 .movie-card {
   display: flex;
   flex-direction: column;
@@ -118,11 +111,10 @@ hr {
   transform: translateY(-5px);
 }
 
-/* ---------- Poster & Overlay ---------- */
 .movie-card__poster {
   position: relative;
   width: 100%;
-  flex: 1;  /* poster 영역 확장 */
+  flex: 1;
   overflow: hidden;
 }
 .movie-card__poster img {
@@ -172,10 +164,10 @@ hr {
   word-wrap: break-word;
   overflow-wrap: break-word;
 }
-/* ---------- Info Section ---------- */
+
 .movie-card__info {
   padding: 10px;
-  flex: 0;  /* info 영역 고정 */
+  flex: 0; 
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -194,7 +186,7 @@ hr {
   width: 100%;
   height: 1px;
 }
-/* ====================== Responsive ====================== */
+
 @media (max-width: 480px) {
   .nav-bar { flex-direction: column; align-items: center; gap: 10px; }
   .filter-bar, .content { flex-direction: column; }
@@ -208,7 +200,6 @@ hr {
   .movies-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
-/* ======================= Form Styles ======================= */
 form {
   background: #fff;
   width: 100%;
