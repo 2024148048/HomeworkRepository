@@ -173,13 +173,14 @@ hr {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  text-align: center;
 }
 .movie-card__info h4 {
-  margin-bottom: 8px;
+  margin-bottom: 1px;
   font-size: 1.1em;
 }
 .movie-card__info p {
-  margin: 4px 0;
+  margin: 1px 0;
   font-size: 0.95em;
   color: #333;
 }
