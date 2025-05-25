@@ -77,10 +77,30 @@ hr {
 
 /* ======================= Movie Grid ======================= */
 .movies-grid {
-  flex: 1;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(2, 1fr);  /* 한 줄에 2개 */
   gap: 20px;
+}
+
+/* 모바일 (최대 480px) */
+@media (max-width: 480px) {
+  .movies-grid {
+    grid-template-columns: 1fr;            /* 좁을 땐 1개 */
+  }
+}
+
+/* 태블릿 (481px ~ 800px) */
+@media (min-width: 481px) and (max-width: 800px) {
+  .movies-grid {
+    grid-template-columns: repeat(2, 1fr); /* 태블릿도 2개 유지 */
+  }
+}
+
+/* 데스크탑 (801px 이상) */
+@media (min-width: 801px) {
+  .movies-grid {
+    grid-template-columns: repeat(2, 1fr); /* 데스크탑도 2개로 고정 */
+  }
 }
 
 /* ======================= Movie Card ======================= */
