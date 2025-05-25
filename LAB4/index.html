@@ -50,7 +50,7 @@
       try {
         const res = await fetch('product.json');
         movies = await res.json();
-        filterMovies();
+        renderMovies();
       } catch (e) {
         console.error('Load error:', e);
       }
