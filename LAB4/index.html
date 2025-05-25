@@ -118,9 +118,17 @@
           renderNextBatch();
         }
       }, {
-        rootMargin: '200px'
+        rootMargin: '0px 0px 200px 0px'
       });
       io.observe(sentinel);
+
+      window.addEventListener('scroll', () => {
+        const scrollPos = window.innerHeight + window.pageYOffset;
+        const threshold = document.documentElement.scrollHeight - 100;
+        if (scrollPos >= threshold) {
+          renderNextBatch();
+        }
+      });
     }
 
     document.addEventListener('DOMContentLoaded', loadMovies);
