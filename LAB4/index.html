@@ -50,6 +50,7 @@
         movies = await res.json();
         filtered = applyFilter(movies);
         currentPage = 0;
+        renderMovies(movies, false)
         renderNextBatch();
         observeSentinel();
       } catch (e) {
