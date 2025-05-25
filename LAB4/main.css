@@ -104,7 +104,6 @@ hr {
   border-radius: 5px;
   overflow: hidden;
   background: #fff;
-  aspect-ratio: 2/3;
   transition: transform 0.2s;
 }
 .movie-card:hover {
