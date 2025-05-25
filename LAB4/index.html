@@ -50,7 +50,7 @@
       try {
         const res = await fetch('product.json');
         movies = await res.json();
-        renderMovies();
+        renderMovies(movies);
       } catch (e) {
         console.error('Load error:', e);
       }
@@ -67,7 +67,8 @@
           <div class="movie-card__poster" tabindex="0">
             <img src="${movie.poster_path}" alt="${movie.title}">
             <div class="movie-card__overlay">
-              <p>${movie.overview}</p>
+              <h4 class="overlay-title">줄거리:</h4>
+              <p class="overlay-text">${movie.overview}</p>
             </div>
           </div>
           <div class="movie-card__info">

@@ -148,12 +148,24 @@ hr {
   transition: opacity 0.3s ease;
   overflow-y: auto;
   z-index: 10;
+  display: flex;
+  flex-direction: column;
 }
 .movie-card__poster:hover .movie-card__overlay,
 .movie-card__poster:focus-within .movie-card__overlay {
   opacity: 1;
 }
-
+.movie-card__overlay .overlay-title {
+  font-size: 1em;
+  font-weight: bold;
+  margin: 0 0 8px;
+}
+.movie-card__overlay .overlay-text {
+  flex: 1;
+  margin: 0;
+  overflow-y: auto;
+  line-height: 1.4;
+}
 /* ---------- Info Section ---------- */
 .movie-card__info {
   padding: 10px;
